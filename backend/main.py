@@ -39,8 +39,8 @@ model = InceptionResnetV1(pretrained='vggface2').eval().to(DEVICE)
 
 print("Loading database...")
 try:
-    all_train_emb = np.load("all_train_embeddings.npy")
-    all_train_labels = np.load("all_train_labels.npy", allow_pickle=True)
+    all_train_emb = np.load("embeddings.npy")
+    all_train_labels = np.load("labels.npy", allow_pickle=True)
     
     # Pre-normalize
     all_train_emb_norm = all_train_emb / np.linalg.norm(all_train_emb, axis=1, keepdims=True)
